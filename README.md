@@ -18,8 +18,8 @@ By specifying `RowPattern` and `ColumnPattern`, you can build layouts more intui
 /
 ├── FlexGridWPF/ # FlexoGrid ライブラリ (DLL) / FlexoGrid library
 │ └── FlexoGrid.csproj
-├── FlexoGridSample/ # サンプル WPF アプリ / Sample WPF application
-│ └── FlexoGridSample.csproj
+├── FlexoGrid/ # サンプル WPF アプリ / Sample WPF application
+│ └── FlexoGrid.csproj
 ├── README.md # このファイル / This file
 ├── LICENCE # ライセンス / License file
 ```
