@@ -34,6 +34,11 @@ By specifying `RowPattern` and `ColumnPattern`, you can build layouts more intui
 - サンプル付きで導入が簡単  
   Easy to get started with included samples
 
+## 🖼️ Screenshot
+
+![Sample UI](./screenshot.png) 
+
+- 
 ## 🚀 使用方法 / Usage
 
 ### 1. XAML での使用例 / XAML Usage Example
