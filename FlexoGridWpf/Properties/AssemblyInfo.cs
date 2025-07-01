@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // 制御されます。アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
 [assembly: AssemblyTitle("FlexoGlidWpf")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A lightweight library for WPF that enables concise and intuitive grid layout configuration.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("gamash61 / AWing-Soft")]
 [assembly: AssemblyProduct("FlexoGlidWpf")]
-[assembly: AssemblyCopyright("Copyright ©  2025 gamash61")]
+[assembly: AssemblyCopyright("Copyright ©  2025 gamash61. Licensed under the MIT License.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

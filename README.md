@@ -1,4 +1,8 @@
-# FlexoGrid
+<!-- # FlexoGridWPF -->
+<h1>
+  <img src="FlexoGridWPF.png" alt="FlexoGrid Icon" width="28" style="vertical-align: middle;">
+  FlexoGridWPF
+</h1>
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Language](https://img.shields.io/badge/language-C%23-239120.svg)

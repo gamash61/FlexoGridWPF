@@ -7,12 +7,12 @@ using System.Windows;
 // アセンブリに関する一般的な情報は、次の方法で制御されます
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("FlexoGridSample")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("FlexoGridWPF Sample Application")]
+[assembly: AssemblyDescription("Sample application of FlexoGridWPF")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FlexoGridSample")]
-[assembly: AssemblyCopyright("Copyright ©  2025 gamash61")]
+[assembly: AssemblyProduct("FlexoGridWPF Sample Application")]
+[assembly: AssemblyCopyright("Copyright ©  2025 gamash61. Licensed under the MIT License.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
