@@ -17,15 +17,21 @@
     <TextBlock Grid.Row="1" Grid.Column="1" Text="Center" />
     <TextBlock Grid.Row="2" Grid.Column="2" Text="Bottom Right" />
 </f:FlexoGrid>
-RowPattern / ColumnPattern Values
-Auto or A : Auto-size to content
+```
 
-*, 2* : Star sizing (relative proportion)
+## RowPattern / ColumnPattern Values
 
-100, 50 : Fixed pixel values
+- `Auto` or `A` : Auto-size to content
+- `*`, `2*`     : Star sizing (relative proportion)
+- `100`, `50`   : Fixed pixel values
 
-Example: "Auto,*,2*,100" defines 4 rows with mixed sizing.
+Example: `"Auto,*,2*,100"` defines 4 rows with mixed sizing.
 
-License
-Licensed under the MIT License.
+---
+
+For more information, visit the [GitHub repository](https://github.com/gamash61/FlexoGridWPF).
+
+## License
+
+Licensed under the [MIT License](https://opensource.org/licenses/MIT).  
 © 2025 gamash61 / AWing-Soft
