@@ -28,7 +28,12 @@
 Example: `"Auto,*,2*,100"` defines 4 rows with mixed sizing.
 
 ---
+## Implementation Notes
+This control was independently designed and implemented from scratch by gamash61.
+While it was inspired by public layout paradigms (such as grid string syntax like "Auto,*,2*"), the actual codebase is entirely original and not based on any proprietary or copyrighted library.
+It is distributed under the MIT License for free and open use.
 
+---
 For more information, visit the [GitHub repository](https://github.com/gamash61/FlexoGridWPF).
 
 ## License
