@@ -18,11 +18,13 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
+      - name: Check working directory
+  		run: pwd
+
       - name: Install license tool
         run: dotnet tool install --global dotnet-project-licenses
 
-- name: Check working directory
-  		run: pwd
+
 
       - name: Generate for FlexoGridWPF
         run: |
