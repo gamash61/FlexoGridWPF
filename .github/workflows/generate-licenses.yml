@@ -70,10 +70,21 @@ jobs:
           echo "==== FlexoGridWPF.md ===="
           cat THIRD_PARTY_FlexoGridWPF.md || echo "No THIRD_PARTY_FlexoGridWPF.md found"
     
+      - name: Force update timestamp
+        run: |
+          touch THIRD_PARTY_FlexoGrid.md
+          touch THIRD_PARTY_FlexoGridWPF.md
+
+      - name: Debug git status
+        run: |
+          git status
+          git diff
+
+        # fail → git diff --quiet && echo "No changes" || git commit -m "Update third-party license files"
       - name: Commit changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add -A
-          git diff --quiet && echo "No changes" || git commit -m "Update third-party license files"
+          git commit -am "Update third-party license files" || echo "Nothing to commit"  
           git push
