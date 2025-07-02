@@ -56,6 +56,20 @@ jobs:
         run: |
           dotnet-project-licenses --input FlexoGridWpf/FlexoGridWpf.csproj --md --outfile THIRD_PARTY_FlexoGridWPF.md
 
+      - name: Debug1 # List all generated files
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Listing contents:"
+          ls -R .
+
+      - name: Debug2 # Show contents if exists
+        run: |
+          echo "==== FlexoGrid.md ===="
+          cat THIRD_PARTY_FlexoGrid.md || echo "No THIRD_PARTY_FlexoGrid.md found"
+          echo "==== FlexoGridWPF.md ===="
+          cat THIRD_PARTY_FlexoGridWPF.md || echo "No THIRD_PARTY_FlexoGridWPF.md found"
+    
       - name: Commit changes
         run: |
           git config --global user.name "github-actions"
