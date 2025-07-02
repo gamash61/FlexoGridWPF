@@ -28,7 +28,7 @@ jobs:
       - name: Generate for FlexoGrid (sample app)
         run: |
           cd FlexoGrid
-          dotnet project-licenses generate --output-file THIRD_PARTY_FlexoGridWPF.md --format markdown
+          dotnet project-licenses generate --output-file THIRD_PARTY_FlexoGrid.md --format markdown
           cd ..
 
       - name: Commit changes
@@ -38,4 +38,3 @@ jobs:
           git add -A
           git diff --quiet && echo "No changes" || git commit -m "Update third-party license files"
           git push
-          
