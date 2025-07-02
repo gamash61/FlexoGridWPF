@@ -48,21 +48,6 @@ jobs:
       - name: Check working directory
         run: pwd # -> /home/runner/work/FlexoGridWPF/FlexoGridWPF 
 
-      # /home/runner/work/
-      #  └── リポジトリ名/       ← 作業ルート
-      #       └── リポジトリ名/  ← Gitの中身
-      #
-      # .github/workflows/generate-licenses.yml がある場所と FlexoGridWPF/ フォルダがある場所
-      # [GitRoot] = /home/runner/work/FlexoGridWPF/FlexoGridWPF/ として、
-      # [GitRoot].github/workflows/generate-licenses.yml
-      # [GitRoot]FlexoGridWPF/ →プロジェクト FlexoGridWPF/ フォルダがある場所
-      #
-      # pwd -> "/home/runner/work/FlexoGridWPF/FlexoGridWPF" == [GitRoot] 
-
-      # Could not find a part of the path 
-      # '[/home/runner/work/FlexoGridWPF/FlexoGridWPF/]FlexoGridWPF/FlexoGridWPF.csproj'.
-      # '/home/runner/work/FlexoGridWPF/FlexoGridWpf/FlexoGridWpf.csproj
-
       - name: Generate for FlexoGrid (sample app)
         run: |
           dotnet-project-licenses --input FlexoGrid/FlexoGrid.csproj --md --outfile FlexoGrid/THIRD_PARTY_FlexoGrid.md
