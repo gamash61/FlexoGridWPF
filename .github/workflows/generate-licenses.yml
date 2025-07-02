@@ -63,15 +63,13 @@ jobs:
       # '[/home/runner/work/FlexoGridWPF/FlexoGridWPF/]FlexoGridWPF/FlexoGridWPF.csproj'.
       - name: Generate for FlexoGridWPF
         run: |
-          cd ../FlexoGridWPF 
-          dotnet-project-licenses --input ../FlexoGridWPF/FlexoGridWPF.csproj --md --outfile THIRD_PARTY_FlexoGridWPF.md
           cd ..
+          dotnet-project-licenses --input ../FlexoGridWPF/FlexoGridWPF.csproj --md --outfile THIRD_PARTY_FlexoGridWPF.md
 
       - name: Generate for FlexoGrid (sample app)
         run: |
-          cd ../FlexoGrid
-          dotnet-project-licenses --input FlexoGrid/FlexoGrid.csproj --md --outfile THIRD_PARTY_FlexoGrid.md
           cd ..
+          dotnet-project-licenses --input FlexoGrid/FlexoGrid.csproj --md --outfile THIRD_PARTY_FlexoGrid.md
 
       - name: Commit changes
         run: |
