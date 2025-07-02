@@ -14,25 +14,33 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup .NET (7.0 and 8.0)
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version:
-             8.0.x
-             7.0.x
-          dotnet-quality: 'ga'
+      #- name: Setup .NET (7.0 and 8.0)
+      #  uses: actions/setup-dotnet@v4
+      #  with:
+      #    dotnet-version:
+      #       8.0.x
+      #       7.0.x
+      #    dotnet-quality: 'ga'
 
-      - name: Set DOTNET_ROOT
-        run: echo \"DOTNET_ROOT=$HOME/.dotnet\" >> $GITHUB_ENV
+      # - name: Set DOTNET_ROOT
+      #  run: echo \"DOTNET_ROOT=$HOME/.dotnet\" >> $GITHUB_ENV
       
-      - name: Manually install .NET 7 runtime
+      - name: Install .NET 7.0 SDK locally
         run: |
-           wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh -O dotnet-install.sh
-           chmod +x dotnet-install.sh
-           ./dotnet-install.sh --runtime dotnet --version 7.0.17 --install-dir "$HOME/.dotnet"
-      
-      - name: Add .dotnet tools to PATH
-        run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+          wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh -O dotnet-install.sh
+          chmod +x dotnet-install.sh
+          ./dotnet-install.sh --channel 7.0 --install-dir "$HOME/.dotnet"
+
+      - name: Set DOTNET_ROOT and update PATH
+        run: |
+          echo "DOTNET_ROOT=$HOME/.dotnet" >> $GITHUB_ENV
+          echo "$HOME/.dotnet" >> $GITHUB_PATH
+          echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+
+      - name: Check installed SDKs and runtimes (debug)
+        run: |
+          dotnet --list-sdks
+          dotnet --list-runtimes
 
       - name: Check working directory
         run: pwd # -> /home/runner/work/FlexoGridWPF/FlexoGridWPF
