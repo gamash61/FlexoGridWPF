@@ -62,16 +62,16 @@ jobs:
       # Could not find a part of the path 
       # '[/home/runner/work/FlexoGridWPF/FlexoGridWPF/]FlexoGridWPF/FlexoGridWPF.csproj'.
       # '/home/runner/work/FlexoGridWPF/FlexoGridWpf/FlexoGridWpf.csproj
-      - name: Generate for FlexoGridWpf
-        run: |
-          cd ..
-          dotnet-project-licenses --input ./FlexoGridWpf/FlexoGridWpf.csproj --md --outfile THIRD_PARTY_FlexoGridWPF.md
 
       - name: Generate for FlexoGrid (sample app)
         run: |
-          cd ..
           dotnet-project-licenses --input FlexoGrid/FlexoGrid.csproj --md --outfile THIRD_PARTY_FlexoGrid.md
 
+      - name: Generate for FlexoGridWpf
+        run: |
+          dotnet-project-licenses --input ./FlexoGridWpf/FlexoGridWpf.csproj --md --outfile THIRD_PARTY_FlexoGridWPF.md
+
+ 
       - name: Commit changes
         run: |
           git config --global user.name "github-actions"
