@@ -22,13 +22,13 @@ jobs:
       - name: Generate for FlexoGridWPF
         run: |
           cd FlexoGridWPF
-          dotnet project-licenses generate --output-file THIRD_PARTY_FlexoGridWPF.md --format markdown
+          dotnet project-licenses generate --output-file ./FlexoGridWPF/THIRD_PARTY_FlexoGridWPF.md  THIRD_PARTY_FlexoGridWPF.md --format markdown
           cd ..
 
       - name: Generate for FlexoGrid (sample app)
         run: |
           cd FlexoGrid
-          dotnet project-licenses generate --output-file THIRD_PARTY_FlexoGrid.md --format markdown
+          dotnet project-licenses generate --output-file ./FlexoGrid/THIRD_PARTY_FlexoGridWPF.md  THIRD_PARTY_FlexoGrid.md --format markdown
           cd ..
 
       - name: Commit changes
