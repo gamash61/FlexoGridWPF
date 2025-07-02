@@ -1,4 +1,4 @@
-nname: Generate Third-Party Licenses for each project
+name: Generate Third-Party Licenses for each project
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
              8.0.x
              7.0.x
           dotnet-quality: 'ga'
-          
+
       - name: Set DOTNET_ROOT
         run: echo \"DOTNET_ROOT=$HOME/.dotnet\" >> $GITHUB_ENV
       
