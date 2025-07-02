@@ -50,11 +50,11 @@ jobs:
 
       - name: Generate for FlexoGrid (sample app)
         run: |
-          dotnet-project-licenses --input FlexoGrid/FlexoGrid.csproj --md --output-directory FlexoGrid --outfile THIRD_PARTY_FlexoGrid.md
+          dotnet-project-licenses --input FlexoGrid/FlexoGrid.csproj --md --outfile THIRD_PARTY_FlexoGrid.md
 
       - name: Generate for FlexoGridWpf
         run: |
-          dotnet-project-licenses --input FlexoGridWpf//FlexoGridWpf.csproj --md --output-directory FlexoGridWpf --outfile THIRD_PARTY_FlexoGridWPF.md
+          dotnet-project-licenses --input FlexoGridWpf/FlexoGridWpf.csproj --md --outfile THIRD_PARTY_FlexoGridWPF.md
 
       - name: Commit changes
         run: |
