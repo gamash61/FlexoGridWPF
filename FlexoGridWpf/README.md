@@ -38,5 +38,5 @@ For more information, visit the [GitHub repository](https://github.com/gamash61/
 
 ## License
 
-Licensed under the [MIT License](https://opensource.org/licenses/MIT).  
-© 2025 gamash61 / AWing-Soft
+It is released under the the [MIT License](https://opensource.org/licenses/MIT), allowing free use, modification, and distribution.
+© 2025 gamash61 (AWing-Soft)
