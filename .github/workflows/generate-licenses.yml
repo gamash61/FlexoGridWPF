@@ -21,6 +21,9 @@ jobs:
       - name: Install license tool
         run: dotnet tool install --global dotnet-project-licenses
 
+     - name: Root Folder
+        run: cd ../../
+        
       - name: Generate for FlexoGridWPF
         run: |
           cd FlexoGridWPF
