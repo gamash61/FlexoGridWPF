@@ -19,20 +19,20 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Check working directory
-        run: pwd
+        run: pwd # -> /home/runner/work/FlexoGridWPF/FlexoGridWPF
 
       - name: Install license tool
         run: dotnet tool install --global dotnet-project-licenses
-        
+
       - name: Generate for FlexoGridWPF
         run: |
-          cd ./FlexoGridWPF
+          cd ../FlexoGridWPF
           dotnet project-licenses generate --output-file THIRD_PARTY_FlexoGridWPF.md --format markdown
           cd ..
 
       - name: Generate for FlexoGrid (sample app)
         run: |
-          cd ./FlexoGrid
+          cd ../FlexoGrid
           dotnet project-licenses generate --output-file THIRD_PARTY_FlexoGrid.md --format markdown
           cd ..
 
