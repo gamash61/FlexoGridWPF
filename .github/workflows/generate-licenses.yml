@@ -50,7 +50,7 @@ jobs:
 
       # /home/runner/work/
       #  └── リポジトリ名/       ← 作業ルート
-      #       └── リポジトリ名/  ← Gitの中身[Root]
+      #       └── リポジトリ名/  ← Gitの中身
       #
       # .github/workflows/generate-licenses.yml がある場所と FlexoGridWPF/ フォルダがある場所
       # [GitRoot] = /home/runner/work/FlexoGridWPF/FlexoGridWPF/ として、
@@ -61,14 +61,14 @@ jobs:
 
       - name: Generate for FlexoGridWPF
         run: |
-          cd ./FlexoGridWPF
-          dotnet-project-licenses --input ./FlexoGridWPF.csproj --md --outfile THIRD_PARTY_FlexoGridWPF.md
+          cd ../FlexoGridWPF 
+          dotnet-project-licenses --input FlexoGridWPF/FlexoGridWPF.csproj --md --outfile THIRD_PARTY_FlexoGridWPF.md
           cd ..
-
+          
       - name: Generate for FlexoGrid (sample app)
         run: |
           cd ../FlexoGrid
-          dotnet-project-licenses --input ./FlexoGrid/FlexoGrid.csproj --md --outfile THIRD_PARTY_FlexoGrid.md
+          dotnet-project-licenses --input FlexoGrid/FlexoGrid.csproj --md --outfile THIRD_PARTY_FlexoGrid.md
           cd ..
 
       - name: Commit changes
