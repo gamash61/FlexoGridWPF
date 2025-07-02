@@ -64,7 +64,7 @@ jobs:
       - name: Generate for FlexoGridWPF
         run: |
           cd ..
-          dotnet-project-licenses --input ../FlexoGridWPF/FlexoGridWPF.csproj --md --outfile THIRD_PARTY_FlexoGridWPF.md
+          dotnet-project-licenses --input FlexoGridWPF/FlexoGridWPF.csproj --md --outfile THIRD_PARTY_FlexoGridWPF.md
 
       - name: Generate for FlexoGrid (sample app)
         run: |
