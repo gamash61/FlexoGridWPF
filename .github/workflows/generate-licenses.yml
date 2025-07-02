@@ -15,11 +15,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install .NET 7.0 runtime locally
+      - name: Install .NET 7.0 SDK locally
         run: |
           wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh -O dotnet-install.sh
           chmod +x dotnet-install.sh
-          ./dotnet-install.sh --runtime dotnet --version 7.0.17 --install-dir "$HOME/.dotnet"
+          ./dotnet-install.sh --channel 7.0 --install-dir "$HOME/.dotnet"
 
       - name: Set DOTNET_ROOT and update PATH
         run: |
@@ -27,8 +27,10 @@ jobs:
           echo "$HOME/.dotnet" >> $GITHUB_PATH
           echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
-      - name: Check installed runtimes (debug)
-        run: dotnet --list-runtimes
+      - name: Check installed SDKs and runtimes (debug)
+        run: |
+          dotnet --list-sdks
+          dotnet --list-runtimes
 
       - name: Install license tool
         run: dotnet tool install --global dotnet-project-licenses
