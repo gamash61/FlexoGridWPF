@@ -3,7 +3,9 @@ name: Generate Third-Party Licenses for each project
 on:
   push:
     branches:
+      - master
       - main
+      
   workflow_dispatch:
 
 jobs:
