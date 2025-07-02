@@ -20,6 +20,13 @@ jobs:
           dotnet-version:
              8.0.x
              7.0.x
+          dotnet-quality: 'ga'
+      
+      - name: Manually install .NET 7 runtime (just in case)
+        run: |
+          wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh -O dotnet-install.sh
+          chmod +x dotnet-install.sh
+          ./dotnet-install.sh --runtime dotnet --version 7.0.17
 
       - name: Check working directory
         run: pwd # -> /home/runner/work/FlexoGridWPF/FlexoGridWPF
