@@ -59,12 +59,14 @@ jobs:
       #
       # pwd -> "/home/runner/work/FlexoGridWPF/FlexoGridWPF" == [GitRoot] 
 
+      # Could not find a part of the path 
+      # '[/home/runner/work/FlexoGridWPF/FlexoGridWPF/]FlexoGridWPF/FlexoGridWPF.csproj'.
       - name: Generate for FlexoGridWPF
         run: |
           cd ../FlexoGridWPF 
-          dotnet-project-licenses --input FlexoGridWPF/FlexoGridWPF.csproj --md --outfile THIRD_PARTY_FlexoGridWPF.md
+          dotnet-project-licenses --input ../FlexoGridWPF/FlexoGridWPF.csproj --md --outfile THIRD_PARTY_FlexoGridWPF.md
           cd ..
-          
+
       - name: Generate for FlexoGrid (sample app)
         run: |
           cd ../FlexoGrid
