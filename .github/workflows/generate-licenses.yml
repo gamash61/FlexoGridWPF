@@ -5,60 +5,50 @@ on:
     branches:
       - master
       - main
-      
   workflow_dispatch:
 
 jobs:
   generate-licenses:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Setup .NET (7.0 and 8.0)
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version:
-             8.0.x
-             7.0.x
-          dotnet-quality: 'ga'
-      
-      #- name: Manually install .NET 7 runtime (just in case)
-      #  run: |
-      #    wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh -O dotnet-install.sh
-      #    chmod +x dotnet-install.sh
-      #    ./dotnet-install.sh --runtime dotnet --version 7.0.17
-
-      - name: Set DOTNET_ROOT
-        run: echo \"DOTNET_ROOT=$HOME/.dotnet\" >> $GITHUB_ENV
-      
-      - name: Manually install .NET 7 runtime
+      - name: Install .NET 7.0 runtime locally
         run: |
-           wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh -O dotnet-install.sh
-           chmod +x dotnet-install.sh
-           ./dotnet-install.sh --runtime dotnet --version 7.0.17 --install-dir "$HOME/.dotnet"
-      
-      - name: Add .dotnet tools to PATH
-        run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+          wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh -O dotnet-install.sh
+          chmod +x dotnet-install.sh
+          ./dotnet-install.sh --runtime dotnet --version 7.0.17 --install-dir "$HOME/.dotnet"
 
-      - name: Check working directory
-        run: pwd # -> /home/runner/work/FlexoGridWPF/FlexoGridWPF
+      - name: Set DOTNET_ROOT and update PATH
+        run: |
+          echo "DOTNET_ROOT=$HOME/.dotnet" >> $GITHUB_ENV
+          echo "$HOME/.dotnet" >> $GITHUB_PATH
+          echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+
+      - name: Check installed runtimes (debug)
+        run: dotnet --list-runtimes
 
       - name: Install license tool
         run: dotnet tool install --global dotnet-project-licenses
 
-      - name: Generate for FlexoGridWPF
+      - name: Check working directory
+        run: pwd # -> /home/runner/work/FlexoGridWPF/FlexoGridWPF
+
+      - name: Generate licenses for FlexoGridWPF
         run: |
           cd ../FlexoGridWPF
           dotnet project-licenses generate --output-file THIRD_PARTY_FlexoGridWPF.md --format markdown
           cd ..
 
-      - name: Generate for FlexoGrid (sample app)
+      - name: Generate licenses for FlexoGrid (sample app)
         run: |
           cd ../FlexoGrid
           dotnet project-licenses generate --output-file THIRD_PARTY_FlexoGrid.md --format markdown
           cd ..
 
-      - name: Commit changes
+      - name: Commit and push changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
