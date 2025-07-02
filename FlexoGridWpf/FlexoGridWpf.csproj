@@ -42,26 +42,8 @@
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.122\lib\net462\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
-    <Reference Include="OxyPlot, Version=2.2.0.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
-      <HintPath>..\packages\OxyPlot.Core.2.2.0\lib\net462\OxyPlot.dll</HintPath>
-    </Reference>
-    <Reference Include="OxyPlot.Wpf, Version=2.2.0.0, Culture=neutral, PublicKeyToken=75e952ba404cdbb0, processorArchitecture=MSIL">
-      <HintPath>..\packages\OxyPlot.Wpf.2.2.0\lib\net462\OxyPlot.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="OxyPlot.Wpf.Shared, Version=2.2.0.0, Culture=neutral, PublicKeyToken=75e952ba404cdbb0, processorArchitecture=MSIL">
-      <HintPath>..\packages\OxyPlot.Wpf.Shared.2.2.0\lib\net462\OxyPlot.Wpf.Shared.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="Prism, Version=9.0.537.60525, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
-      <HintPath>..\packages\Prism.Core.9.0.537\lib\net47\Prism.dll</HintPath>
-    </Reference>
-    <Reference Include="Prism.Container.Abstractions, Version=9.0.106.9543, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
-      <HintPath>..\packages\Prism.Container.Abstractions.9.0.106\lib\net47\Prism.Container.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Prism.Events, Version=9.0.537.60525, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
-      <HintPath>..\packages\Prism.Events.9.0.537\lib\net47\Prism.Events.dll</HintPath>
-    </Reference>
     <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
