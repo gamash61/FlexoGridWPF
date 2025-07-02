@@ -61,10 +61,10 @@ jobs:
 
       # Could not find a part of the path 
       # '[/home/runner/work/FlexoGridWPF/FlexoGridWPF/]FlexoGridWPF/FlexoGridWPF.csproj'.
-      - name: Generate for FlexoGridWPF
+      - name: Generate for FlexoGridWpf
         run: |
           cd ..
-          dotnet-project-licenses --input FlexoGridWPF/FlexoGridWPF.csproj --md --outfile THIRD_PARTY_FlexoGridWPF.md
+          dotnet-project-licenses --input FlexoGridWpf/FlexoGridWpf.csproj --md --outfile THIRD_PARTY_FlexoGridWPF.md
 
       - name: Generate for FlexoGrid (sample app)
         run: |
