@@ -7,6 +7,10 @@
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Language](https://img.shields.io/badge/language-C%23-239120.svg)
 ![Platform](https://img.shields.io/badge/platform-WPF-blueviolet)
+![.NET Framework 4.8](https://img.shields.io/badge/.NET_Framework-4.8-blue)
+<!--
+![NuGet](https://img.shields.io/nuget/v/FlexoGridWPF.svg)
+-->
 
 *FlexoGrid は、簡潔な記述で WPF の Grid レイアウトを設定できる軽量なライブラリです。  
 `RowPattern` と `ColumnPattern` を指定することで、従来の XAML より直感的にレイアウト構築が可能です。
@@ -15,6 +19,9 @@ FlexoGrid is a lightweight library for WPF that enables concise and intuitive gr
 By specifying `RowPattern` and `ColumnPattern`, you can build layouts more intuitively than with conventional XAML.
 
 ---
+## Target Framework
+
+- .NET Framework 4.8
 
 ## 📦 プロジェクト構成  / Project Structure
 
@@ -103,3 +110,4 @@ You are free to use, modify, and distribute it.
 本ライブラリは参考実装に基づき、独自に再設計・再構成されたものです。
 
 This library was independently redesigned and restructured based on reference implementations.
+

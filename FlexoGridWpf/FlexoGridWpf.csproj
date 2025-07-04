@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<!--Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"-->
+<Project Sdk="Microsoft.NET.Sdk"> <!--for using Msbuild.exe to make nuget package-->
+
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <!-- NuGet Package Information -->
@@ -9,6 +11,10 @@
     <Company>gamash61 (awing-soft.com)</Company>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>Copyright © 2025 gamash61</Copyright>
+     <!-- アセンブリバージョン情報 -->
+    <AssemblyVersion>1.0.0</AssemblyVersion>  <!-- AssemblyVersion -->
+    <FileVersion>1.0.0</FileVersion>        <!-- FileVersion -->
+    <Description>A lightweight library for WPF that enables concise and intuitive grid layout configuration.</Description> <!-- AssemblyDescription -->
     <!-- Project and Repository Information -->
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/gamash61/FlexoGridWPF</RepositoryUrl>
@@ -21,7 +27,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <OutputType>Library</OutputType>
     <ProjectGuid>{68AC8AA3-6D7D-4E98-9115-D8E9D6A5AEE1}</ProjectGuid>
-    <!--<TargetFramework>net48</TargetFramework>-->
+    <!-- Project Sdk="Microsoft.NET.Sdk"にするなら必要 -->
+    <TargetFramework>net48</TargetFramework>
   </PropertyGroup>
   <!-- Configuration for Debug and Release -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -56,16 +63,33 @@
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
-  <ItemGroup>
+  <ItemGroup><!-- Project Sdk="Microsoft.NET.Sdk"を指定したので、これは含めてはいけない。
     <Compile Include="FlexoGridWPF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    -->
+  
+    <None Remove="FlexoGridWPF.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FlexoGridWPF.png" />
+	  <None Include="FlexoGridWPF.png">
+		  <Pack>true</Pack>
+		  <PackagePath>FlexoGridWPF.png</PackagePath> <!-- アイコンをルートに配置 -->
+		  <!-- パッケージ内のアイコンファイルの配置先 -->
+	  </None>
+	<!--
+    <Content Include="FlexoGridWPF.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+	-->
     <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="README.md" />
+    <!--<None Include="README.md" />-->
+	  <None Include="README.md">
+		  <Pack>true</Pack>
+		  <PackagePath>README.md</PackagePath> <!-- README.md をルートに配置 -->
+		  <!-- パッケージ内のアイコンファイルの配置先 -->
+	  </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
