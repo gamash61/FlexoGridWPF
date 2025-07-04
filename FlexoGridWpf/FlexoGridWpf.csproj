@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  
   <PropertyGroup>
     <!-- NuGet Package Information -->
     <PackageId>FlexoGridWPF</PackageId>
@@ -10,23 +9,20 @@
     <Company>gamash61 (awing-soft.com)</Company>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>Copyright © 2025 gamash61</Copyright>
-
     <!-- Project and Repository Information -->
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/gamash61/FlexoGridWPF</RepositoryUrl>
     <PackageProjectUrl>https://github.com/gamash61/FlexoGridWPF</PackageProjectUrl>
-
     <!-- NuGet Package Assets -->
     <PackageIcon>FlexoGridWPF.png</PackageIcon>
     <PackageTags>WPF;Grid;Layout;Class Library</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-  
     <!-- Output and Build Configuration -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <OutputType>Library</OutputType>
+    <ProjectGuid>{68AC8AA3-6D7D-4E98-9115-D8E9D6A5AEE1}</ProjectGuid>
     <!--<TargetFramework>net48</TargetFramework>-->
   </PropertyGroup>
-
   <!-- Configuration for Debug and Release -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,7 +33,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -46,7 +41,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -59,24 +53,19 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Include="FlexoGridWPF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="FlexoGridWPF.png" />
     <Content Include="README.txt" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="README.md" />
   </ItemGroup>
-
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
